@@ -27,6 +27,8 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import jira from "./tech/jira.png";
 import confluence from "./tech/confluence.png";
+import analysis from "./tech/analysis.png";
+
 import emoji1 from "./emoji1.png";
 import emoji2 from "./emoji2.png";
 import cticket from "./company/cticket-logo.png";
@@ -47,6 +49,7 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
+  analysis,
   backend,
   creator,
   mobile,

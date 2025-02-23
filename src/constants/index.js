@@ -7,13 +7,7 @@ import {
   reactjs,
   git,
   figma,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
+ analysis,
   roadmap,
   sprint,
   marketing,
@@ -64,7 +58,12 @@ const services = [
     title: "UI/UX Design",
     icon: ui,
   },
-];
+
+  {
+    title: "Google Tag Manager",
+    icon: analysis, 
+  },];
+
 
 const technologies = [
   {
