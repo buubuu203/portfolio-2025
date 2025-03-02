@@ -107,6 +107,19 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Associate Tech Product Manager",
+    company_name: "Cake by VPBank",
+    squad: "CTicket",
+    icon: cticket,
+    iconBg: "white",
+    date: "Febuary 2025 - Present",
+    points: [
+      "Managed sprint planning and backlog prioritization across development teams",
+      "Conducted user research to identify pain points and validate solutions through testing",
+      "Collaborated with marketing and engineering teams to ensure cohesive product development",
+    ],
+  },
+  {
     title: "Tech Product Owner Intern",
     company_name: "Cake by VPBank",
     squad: "CTicket",
