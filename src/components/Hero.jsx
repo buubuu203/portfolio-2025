@@ -21,8 +21,9 @@ const Hero = () => {
             Hi, I'm <span className="text-[#915EFF]">Dang</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Result-driven, soon-to-graduate honors student with technical
-            background and product management experience{" "}
+            Tech Product Owner with fintech experience in KYC, Growth, and
+            Ticketing Platforms. Passionate about building products that delight
+            users, scale with business needs, and meet regulatory standards.{" "}
             <br className="sm:block hidden" />
           </p>
 

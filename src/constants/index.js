@@ -10,7 +10,7 @@ import {
  analysis,
   roadmap,
   sprint,
-  marketing,
+  // marketing,
   ui,
   jira,
   confluence,
@@ -20,6 +20,8 @@ import {
   elite,
   appleStore,
   paradise,
+  collab,
+  ctix,
 } from "../assets";
 
 export const navLinks = [
@@ -47,22 +49,28 @@ const services = [
     icon: roadmap,
   },
   {
-    title: "Sprint Planning",
+    title: "Sprint Planning & Backlog Development",
     icon: sprint,
   },
-  {
-    title: "Digital Marketing",
-    icon: marketing,
-  },
+  // {
+  //   title: "Digital Marketing",
+  //   icon: marketing,
+  // },
   {
     title: "UI/UX Design",
     icon: ui,
   },
 
   {
-    title: "Google Tag Manager",
+    title: "User Research & UX Optimization",
     icon: analysis, 
-  },];
+  },
+  {
+    title:"Stakeholder Collaboration",
+    icon: collab, 
+  }
+  
+];
 
 
 const technologies = [
@@ -114,9 +122,10 @@ const experiences = [
     iconBg: "white",
     date: "Febuary 2025 - Present",
     points: [
-      "Managed sprint planning and backlog prioritization across development teams",
-      "Conducted user research to identify pain points and validate solutions through testing",
-      "Collaborated with marketing and engineering teams to ensure cohesive product development",
+    "Owned product backlog and sprint planning, aligning priorities across engineering and business stakeholders.",
+"Drove user research and testing that shaped high-impact features, including voucher campaigns, authentication, payments, ticket transfer, and SDK integration.",
+"Coordinated with marketing and engineering to deliver seamless ticketing experiences — notably powering the VPBank K-Star Spark concert (40K+ tickets sold), one of Vietnam's largest single-event launches.",
+"Ensured platform stability under massive traffic spikes and DDoS attacks, safeguarding user experience during peak demand"
     ],
   },
   {
@@ -203,6 +212,27 @@ const testimonials = [
 
 const projects = [
   {
+    name: "CTicket – Digital Ticketing Platform",
+    description:
+      "Next-gen ticketing system at CTicket. Delivered key features: vouchers, payments, ticket transfer, and SDK integration.",
+    tags: [
+      {
+        name: "fintech",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "ticketing",
+        color: "green-text-gradient",
+      },
+      {
+        name: "productowner",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ctix,
+    source_code_link: "https://cticket.vn/",
+  },
+  {
     name: "Elite Fitness",
     description:
       "Developed AI-powered fitness application using Machine Learning for movement tracking and BMI prediction",
@@ -223,42 +253,42 @@ const projects = [
     image: elite,
     source_code_link: "https://github.com/thienenpi/EliteFitness",
   },
-  {
-    name: "Apple Store",
-    description:
-      "My project of IS207.O13 course at UIT, it's a fullstack E-Commerce Website using React, PHP, MySQL,...",
-    tags: [
-      {
-        name: "javascript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "php",
-        color: "green-text-gradient",
-      },
+  // {
+  //   name: "Apple Store",
+  //   description:
+  //     "My project of IS207.O13 course at UIT, it's a fullstack E-Commerce Website using React, PHP, MySQL,...",
+  //   tags: [
+  //     {
+  //       name: "javascript",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "php",
+  //       color: "green-text-gradient",
+  //     },
       
-    ],
-    image: appleStore,
-    source_code_link: "https://github.com/buubuu203/apple-store-is207",
-  },
-  {
-    name: "Paradise",
-    description:
-      "A hotel management application for manager and staff to keep track of their hotel.",
-    tags: [
-      {
-        name: "dart",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "c++",
-        color: "green-text-gradient",
-      },
+  //   ],
+  //   image: appleStore,
+  //   source_code_link: "https://github.com/buubuu203/apple-store-is207",
+  // },
+  // {
+  //   name: "Paradise",
+  //   description:
+  //     "A hotel management application for manager and staff to keep track of their hotel.",
+  //   tags: [
+  //     {
+  //       name: "dart",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "c++",
+  //       color: "green-text-gradient",
+  //     },
       
-    ],
-    image: paradise,
-    source_code_link: "https://github.com/ManhHoDinh/Paradise_Hotel_Management",
-  },
+  //   ],
+  //   image: paradise,
+  //   source_code_link: "https://github.com/ManhHoDinh/Paradise_Hotel_Management",
+  // },
 ];
 
 export { services, technologies, experiences, testimonials, projects };

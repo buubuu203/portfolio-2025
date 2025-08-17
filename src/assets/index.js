@@ -28,7 +28,6 @@ import threejs from "./tech/threejs.svg";
 import jira from "./tech/jira.png";
 import confluence from "./tech/confluence.png";
 import analysis from "./tech/analysis.png";
-
 import emoji1 from "./emoji1.png";
 import emoji2 from "./emoji2.png";
 import cticket from "./company/cticket-logo.png";
@@ -38,11 +37,12 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import cake from "./company/Cake_Logo.png";
+import collab from "./team.png";
 
 import appleStore from "./projects/apple-store.png";
 import elite from  "./projects/elite.png";
 import paradise from "./projects/paradise.png";
-
+import ctix from "./projects/ctix.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -75,6 +75,7 @@ export {
   starbucks,
   tesla,
   carrent,
+  ctix,
   jobit,
   tripguide,
   marketing,
@@ -93,4 +94,5 @@ export {
   appleStore,
   elite,
   paradise,
+  collab,
 };

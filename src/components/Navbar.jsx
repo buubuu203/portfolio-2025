@@ -45,7 +45,10 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
             Dang Chau &nbsp;
-            <span className="sm:block hidden"> | Tech Product Owner</span>
+            <span className="sm:block hidden">
+              {" "}
+              | Associate Tech Product Manager | E-Commerce{" "}
+            </span>
           </p>
         </Link>
 

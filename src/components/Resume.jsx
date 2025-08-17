@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import resume from "../assets/resume.pdf";
+import resume from "../assets/ChauNgocBuuDang_TechProductOwner_CV.pdf";
 
 const Resume = () => {
   return (

@@ -47,11 +47,15 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Currently, I'm a senior at UIT - VNU HCM, major in E-Commerce, I
-        consider myself as a person who… 🤷‍♂️ <br />
-        Always accept challenges and upgrade myself every day. <br />I have an
-        open mind and desire to work in a young and dynamic environment.
-        <br /> Hope that we can work together in the future!
+        At Cake by VPBank, I was Tech Product Owner for CTicket — Vietnam’s
+        next-gen ticketing platform. I delivered key features such as vouchers,
+        payments, ticket transfer, and an SDK for partner integration. <br />
+        In 2025, CTicket powered the VPBank K-Star Spark concert (G-Dragon &
+        CL), selling about <strong>40,000 tickets</strong> — one of the largest
+        single-event launches in Vietnam. Despite massive traffic spikes and
+        DDoS attacks, the platform ensured a smooth fan experience. This role
+        honed my ability to balance user needs, scalability, and business goals
+        under real pressure.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
