@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -8,91 +9,85 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const formRef = useRef(null);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic validation
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
     setLoading(true);
 
-    // Gửi email đến bạn (để nhận thông tin từ form)
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID, // Service ID
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID, // Template ID (template gửi đến bạn)
-        {
-          from_name: form.name, // Tên người gửi (từ form)
-          to_name: "Dang", // Tên người nhận (bạn)
-          from_email: form.email, // Email người gửi (từ form)
-          to_email: "work.dangchau2003@gmail.com", // Email người nhận (bạn)
-          message: form.message, // Nội dung tin nhắn (từ form)
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY // Public Key
-      )
-      .then(
-        () => {
-          // Gửi email phản hồi tự động đến người dùng
-          emailjs
-            .send(
-              import.meta.env.VITE_APP_EMAILJS_SERVICE_ID, // Service ID
-              "TEMPLATE_ID_FOR_AUTO_RESPONSE", // Template ID (template phản hồi tự động)
-              {
-                from_name: "Dang", // Tên người gửi (bạn)
-                to_name: form.name, // Tên người nhận (từ form)
-                from_email: "work.dangchau2003@gmail.com", // Email người gửi (bạn)
-                to_email: form.email, // Email người nhận (từ form)
-                message:
-                  "Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.", // Nội dung phản hồi
-              },
-              import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY // Public Key
-            )
-            .then(
-              () => {
-                setLoading(false);
-                alert("Thank you. I will get back to you as soon as possible.");
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateReceive = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_RECEIVE;
+      const templateAutoReply = import.meta.env
+        .VITE_EMAILJS_TEMPLATE_ID_AUTOREPLY;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-                // Reset form sau khi gửi thành công
-                setForm({
-                  name: "",
-                  email: "",
-                  message: "",
-                });
-              },
-              (error) => {
-                setLoading(false);
-                console.error(error);
-                alert("Ahh, something went wrong. Please try again.");
-              }
-            );
+      if (!serviceId || !templateReceive || !templateAutoReply || !publicKey) {
+        throw new Error("Missing EmailJS env vars");
+      }
+
+      // Optional: show loading toast
+      const toastId = toast.loading("Sending message...");
+
+      // 1) Send to you
+      await emailjs.send(
+        serviceId,
+        templateReceive,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          to_name: "Dang",
+          to_email: "work.dangchau2003@gmail.com",
+          // If your template uses reply_to, uncomment the next line:
+          // reply_to: form.email,
         },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          alert("Ahh, something went wrong. Please try again.");
-        }
+        publicKey
       );
+
+      // 2) Auto reply to user
+      await emailjs.send(
+        serviceId,
+        templateAutoReply,
+        {
+          to_name: form.name,
+          to_email: form.email,
+          // For auto-reply, you can send a custom message instead of echoing user's message:
+          message: "Thank you for reaching out. I’ll get back to you soon.",
+          from_name: "Dang",
+        },
+        publicKey
+      );
+
+      toast.success("Message sent successfully. I’ll get back to you soon ✨", {
+        id: toastId,
+      });
+
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
@@ -106,44 +101,47 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-medium mb-4">Full name</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="Enter your full name"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
+
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
+            <span className="text-white font-medium mb-4">Email address</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="Enter your email address"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
+
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-white font-medium mb-4">Message</span>
             <textarea
               rows={7}
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What you want to say?"
+              placeholder="Please describe your inquiry or message"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
 
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            disabled={loading}
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Sending..." : "Send message"}
           </button>
         </form>
       </motion.div>

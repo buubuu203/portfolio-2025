@@ -47,15 +47,19 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        At Cake by VPBank, I was Tech Product Owner for CTicket — Vietnam’s
-        next-gen ticketing platform. I delivered key features such as vouchers,
-        payments, ticket transfer, and an SDK for partner integration. <br />
-        In 2025, CTicket powered the VPBank K-Star Spark concert (G-Dragon &
-        CL), selling about <strong>40,000 tickets</strong> — one of the largest
-        single-event launches in Vietnam. Despite massive traffic spikes and
-        DDoS attacks, the platform ensured a smooth fan experience. This role
-        honed my ability to balance user needs, scalability, and business goals
-        under real pressure.
+        I’m a Product Owner with experience working on data-aware, system-driven
+        platforms, where product decisions are shaped by metrics, operational
+        realities, and technical constraints.
+        <br />I enjoy clarifying ambiguous problems, defining end-to-end
+        workflows, and working closely with engineers to turn complex logic into
+        structured, scalable product solutions. <br />
+        My background includes consumer-facing products with high traffic as
+        well as internal tools and admin systems that support operations at
+        scale — from promotions and payments to on-site execution and
+        monitoring. <br />
+        I’m particularly interested in roles where product impact is measurable,
+        trade-offs are explicit, and collaboration between product, engineering,
+        and business is essential.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

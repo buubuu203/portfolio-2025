@@ -7,7 +7,7 @@ import {
   reactjs,
   git,
   figma,
- analysis,
+  analysis,
   roadmap,
   sprint,
   // marketing,
@@ -63,15 +63,13 @@ const services = [
 
   {
     title: "User Research & UX Optimization",
-    icon: analysis, 
+    icon: analysis,
   },
   {
-    title:"Stakeholder Collaboration",
-    icon: collab, 
-  }
-  
+    title: "Stakeholder Collaboration",
+    icon: collab,
+  },
 ];
-
 
 const technologies = [
   {
@@ -110,22 +108,20 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-  
 ];
 
 const experiences = [
   {
     title: "Associate Tech Product Manager",
     company_name: "Cake by VPBank",
-    squad: "CTicket",
+    squad: "CTicket Platform (Consumer & Operations Systems)",
     icon: cticket,
     iconBg: "white",
     date: "Febuary 2025 - Present",
     points: [
-    "Owned product backlog and sprint planning, aligning priorities across engineering and business stakeholders.",
-"Drove user research and testing that shaped high-impact features, including voucher campaigns, authentication, payments, ticket transfer, and SDK integration.",
-"Coordinated with marketing and engineering to deliver seamless ticketing experiences — notably powering the VPBank K-Star Spark concert (40K+ tickets sold), one of Vietnam's largest single-event launches.",
-"Ensured platform stability under massive traffic spikes and DDoS attacks, safeguarding user experience during peak demand"
+      "Worked as a Product Owner on CTicket, a large-scale digital ticketing platform serving both end users and internal operations teams.",
+      "Focused on translating complex business and operational requirements into clear product specifications, working closely with engineers to deliver scalable and reliable features.",
+      "Contributed to core modules such as promotions, vouchers, ticket transfer, and internal admin tools, while supporting high-demand launches and real-world system constraints in production.",
     ],
   },
   {
@@ -136,10 +132,9 @@ const experiences = [
     iconBg: "white",
     date: "December 2025 - Febuary 2025",
     points: [
-      "Served as Product Owner for CTicket, leading ticketing platform in Vietnam",
-      "Developed product roadmap, redesigned booking flow UI and homepage for improved UX",
-      "Implemented fee collection feature and led sprint planning sessions",
-      "Coordinated with development teams to ensure timely feature delivery."
+      "Contributed to product backlog management, requirement clarification, and sprint preparation in collaboration with engineering teams.",
+      "Worked on improving booking flow and homepage experience, focusing on usability and clarity.",
+      "Assisted in defining fee collection logic and coordinating feature delivery across development teams.",
     ],
   },
   {
@@ -150,11 +145,12 @@ const experiences = [
     iconBg: "white",
     date: "June 2024 - December 2024",
     points: [
-      "Managed product backlog grooming sessions and authored user stories to enhance customer onboarding and KYC flows",
-      "Developed and implemented NFC assistance module to resolve device compatibility issues and improve user experience during ID verification",
-      "Collaborated with development team to implement new features and enhancements to KYC portal" ,
+      "Supported product discovery and delivery for onboarding and KYC flows in a regulated environment.",
+      "Worked on user story writing, backlog refinement, and requirement clarification in collaboration with engineering and compliance teams.",
+      "Gained hands-on experience balancing regulatory requirements with usability and product clarity.",
     ],
-  },{
+  },
+  {
     title: "Student",
     company_name: "UIT",
     squad: "E-Commerce Major",
@@ -164,7 +160,7 @@ const experiences = [
     points: [
       "Gained hands-on experience in market research, user behavior analysis, and digital product strategy through academic projects",
       "Applied Agile methodologies in multiple course projects, demonstrating strong product management fundamentals",
-      "Developed technical foundation in web development (ReactJS), database management, and system analysis, enabling effective collaboration with engineering teams"
+      "Developed technical foundation in web development (ReactJS), database management, and system analysis, enabling effective collaboration with engineering teams",
     ],
   },
 
@@ -266,7 +262,7 @@ const projects = [
   //       name: "php",
   //       color: "green-text-gradient",
   //     },
-      
+
   //   ],
   //   image: appleStore,
   //   source_code_link: "https://github.com/buubuu203/apple-store-is207",
@@ -284,7 +280,7 @@ const projects = [
   //       name: "c++",
   //       color: "green-text-gradient",
   //     },
-      
+
   //   ],
   //   image: paradise,
   //   source_code_link: "https://github.com/ManhHoDinh/Paradise_Hotel_Management",

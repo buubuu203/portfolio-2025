@@ -12,10 +12,23 @@ import {
   StarsCanvas,
   Footer,
 } from "./components";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <BrowserRouter>
+      {/* 🔔 Toast container */}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "#151030",
+            color: "#fff",
+            borderRadius: "12px",
+          },
+        }}
+      />
+
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
