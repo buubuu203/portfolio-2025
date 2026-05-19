@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import resume from "../assets/ChauNgocBuuDang_TechProductOwner_CV.pdf";
+import resume from "../assets/ChauNgocBuuDang_AssociateTechProductManager.pdf";
 
 const Resume = () => {
   return (
@@ -33,7 +33,7 @@ const Resume = () => {
         >
           <a
             href={resume}
-            download="ChauNgocBuuDang_TechProductOwner_CV.pdf"
+            download="ChauNgocBuuDang_AssociateTechProductManager.pdf"
             className="hover:bg-[#804dee] text-white font-bold py-2 px-4 rounded"
           >
             Download Resume
